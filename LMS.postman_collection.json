@@ -1,0 +1,1034 @@
+{
+	"info": {
+		"_postman_id": "89c1a56d-10a3-4a0e-b762-1af57bf79987",
+		"name": "LMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34929395"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGE0MmZiMTg3M2JmZTY2OTViZTE3NyIsImlhdCI6MTc2MjI4MDI4MSwiZXhwIjoxNzY0ODcyMjgxfQ.qDIF6pvY9unXuSh4hhq3YoBXGT7G2wL1KZPFvnKZQEk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"basoooooool\",\n    \"email\":\"basel.barakat2003@gmail.com\",\n    \"password\":\"12345678\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/registration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activate user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"activation_code\":\"4105\",\n    \"activation_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJtb2hhbW1lZCIsImVtYWlsIjoibW9oYW1tZTkwMjAwMEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMzQ1Njc4In0sImFjdGl2YXRpb25Db2RlIjoiNDEwNSIsImlhdCI6MTc2MjcyNzYyNywiZXhwIjoxNzYyNzI3OTI3fQ.rlvmGaM0Jy9XSf_Veg2GWIxOm5JW_WiQm8L1SXdwUHk\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/activate-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"activate-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"marwaadelll264@gmail.com\",\n    \"password\":\"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Load user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "social-auth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"test\",\n    \"email\":\"meelll264@gmail.com\",\n    \"avatar\":\"https//test.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/social-auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"social-auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "course",
+			"item": [
+				{
+					"name": "create-course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Full-Stack Web Development Bootcamp\",\n  \"description\": \"Learn how to build modern web applications using React, Node.js, Express, and MongoDB.\",\n  \"price\": 120,\n  \"estimatedPrice\": 150,\n \n  \"tags\": \"Web Development\",\n  \"level\": \"Intermediate\",\n  \"demoUrl\": \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\",\n  \"benefits\": [\n    { \"title\": \"Build real-world projects\" },\n    { \"title\": \"Master both front-end and back-end\" },\n    { \"title\": \"Learn deployment and optimization\" }\n  ],\n  \"prerequisites\": [\n    { \"title\": \"Basic knowledge of HTML, CSS, and JavaScript\" }\n  ],\n  \"reviews\": [\n    {\n      \"user\": { \"name\": \"Ahmed Ali\", \"id\": \"u123\" },\n      \"rating\": 5,\n      \"comment\": \"Amazing course! I learned a lot.\",\n      \"commentReplies\": []\n    }\n  ],\n  \"courseData\": [\n    {\n      \"title\": \"Introduction to Web Development\",\n      \"description\": \"Overview of the tools and technologies used in modern web apps.\",\n      \"videoUrl\": \"https://example.com/videos/intro.mp4\",\n      \"videoSection\": \"Getting Started\",\n      \"videoLength\": 15,\n      \"videoPlayer\": \"HTML5\",\n      \"links\": [\n        { \"title\": \"Documentation\", \"url\": \"https://developer.mozilla.org\" }\n      ],\n      \"suggestion\": \"Start with the basics before moving on.\",\n      \"questions\": [\n        {\n          \"user\": { \"name\": \"Omar\", \"id\": \"u456\" },\n          \"comment\": \"Can I use VSCode for this?\",\n          \"commentReplies\": []\n        }\n      ]\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/create-course",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"create-course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit-course",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Hossam Full-Stack Web Development Bootcamp\",\n  \"description\": \"Learn how to build modern web applications using React, Node.js, Express, and MongoDB.\",\n  \"price\": 120,\n  \"estimatedPrice\": 150,\n  \"thumbnail\": {\n    \"public_id\": \"course_thumb_01\",\n    \"url\": \"https://res.cloudinary.com/demo/image/upload/v1723456789/sample.jpg\"\n  },\n  \"tags\": \"Web Development\",\n  \"level\": \"Intermediate\",\n  \"demoUrl\": \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\",\n  \"benefits\": [\n    { \"title\": \"Build real-world projects\" },\n    { \"title\": \"Master both front-end and back-end\" },\n    { \"title\": \"Learn deployment and optimization\" }\n  ],\n  \"prerequisites\": [\n    { \"title\": \"Basic knowledge of HTML, CSS, and JavaScript\" }\n  ],\n  \"reviews\": [\n    {\n      \"user\": { \"name\": \"Ahmed Ali\", \"id\": \"u123\" },\n      \"rating\": 5,\n      \"comment\": \"Amazing course! I learned a lot.\",\n      \"commentReplies\": []\n    }\n  ],\n  \"courseData\": [\n    {\n      \"title\": \"Introduction to Web Development\",\n      \"description\": \"Overview of the tools and technologies used in modern web apps.\",\n      \"videoUrl\": \"https://example.com/videos/intro.mp4\",\n      \"videoSection\": \"Getting Started\",\n      \"videoLength\": 15,\n      \"videoPlayer\": \"HTML5\",\n      \"links\": [\n        { \"title\": \"Documentation\", \"url\": \"https://developer.mozilla.org\" }\n      ],\n      \"suggestion\": \"Start with the basics before moving on.\",\n      \"questions\": [\n        {\n          \"user\": { \"name\": \"Omar\", \"id\": \"u456\" },\n          \"comment\": \"Can I use VSCode for this?\",\n          \"commentReplies\": []\n        }\n      ]\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/edit-course/690fd076631b957f825fd374",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"edit-course",
+								"690fd076631b957f825fd374"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "690fd076631b957f825fd374",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-single-course. Without purchase ",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-course/690fd0cf631b957f825fd37e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-course",
+								"690fd0cf631b957f825fd37e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": " get all the courses without any purchasing",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-courses-content by the user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-courses-content/690fd0cf631b957f825fd37e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-courses-content",
+								"690fd0cf631b957f825fd37e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add question in the course content ",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"question\":\"this is the test question\",\n    \"courseId\":\"690fd0cf631b957f825fd37e\",\n    \"contentId\":\"690fd0cf631b957f825fd384\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/add-question",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"add-question"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-replay to the users ",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"answer\":\"this is the test answer habiby haklmk ya ghaly\",\n    \"courseId\":\"690fd0cf631b957f825fd37e\",\n    \"contentId\":\"690fd0cf631b957f825fd384\",\n    \"questionId\":\"6910fa91ca481079745035d8\"\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/add-answer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"add-answer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add review",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"review\":\"wallahy gamed yabny 3azmaaaaaaa\",\n    \"rating\":5\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/add-review/690fd076631b957f825fd374",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"add-review",
+								"690fd076631b957f825fd374"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-reply for review ----only for the admin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comment\":\"thank you ya habiby \",\n    \"courseId\":\"690fd076631b957f825fd374\",\n    \"reviewId\":\"6911063e7ebf7526328e7f27\"\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/add-reply",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"add-reply"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-courses ---- for admin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-all-courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-all-courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete course only for admin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/delete-course/690fd0cf631b957f825fd37e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"delete-course",
+								"690fd0cf631b957f825fd37e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-course-analytics --- for only admin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-course-analytics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-course-analytics"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "create order",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"courseId\":\"690fd076631b957f825fd374\"\n\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/create-order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"create-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-orders --- for admin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-orders-analytics ---- only for admin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-orders-analytics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-orders-analytics"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "notifications",
+			"item": [
+				{
+					"name": "get all notification---admin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-all-notifications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-all-notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-notification-status---admin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/update-notification/691291ee5b791916ac612ceb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"update-notification",
+								"691291ee5b791916ac612ceb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Delete user for admin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":\"690f314aea9d04a2146f501f\",\n    \"role\":\"admin\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/delete-user/690e36e9feea272eeb05ba98",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"delete-user",
+								"690e36e9feea272eeb05ba98"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-user-role ----for adain",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":\"690f314aea9d04a2146f501f\",\n    \"role\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/update-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"update-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-user-info",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"marwa\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/update-user-info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"update-user-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-user-password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldpassword\":\"00000000\",\n    \"newpassword\":\"12345678\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/update-user-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"update-user-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-user-avatar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"avatar\":\"https://imgcdn.stablediffusionweb.com/2024/2/22/bc30db5b-54ea-4f6f-8135-87c4a1f2f054.jpg\"\n    \n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/update-user-avatar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"update-user-avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-users for admin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-user-analytics -- only for admin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-users-analytics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-users-analytics"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "layout",
+			"item": [
+				{
+					"name": "create-layout only for admin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"Category\",\n  \"categories\": [\n    {\n      \"title\": \"Web Development\",\n      \"description\": \"Learn HTML, CSS, and JavaScript\"\n    },\n    {\n      \"title\": \"Data Science\",\n      \"description\": \"Master Python, ML, and AI\"\n    }\n  ]\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/create-layout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"create-layout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit-layout only for admin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"FAQ\",\n  \"faq\": [\n    {\n      \"question\": \"habiby ya kbeeer\",\n      \"answer\": \"akhoiaaa ya hambozoo\"\n    },\n    {\n      \"question\": \"bahibk \",\n      \"answer\": \"wana kman\"\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/edit-layout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"edit-layout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-layout only for admin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"Category\"\n \n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-layout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-layout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
